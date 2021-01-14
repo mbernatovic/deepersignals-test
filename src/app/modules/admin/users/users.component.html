@@ -1,0 +1,59 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ff9c67" type="square-jelly-box" [fullScreen]="true">
+    <p style="color: white; background: transparent;"> Loading... </p>
+</ngx-spinner>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <button mat-raised-button type="button" class="btn btn-primary btn-sm element-right"
+                    (click)="exportToCsv()">Export to
+                    CSV</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">User Assesments</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        First Name
+                                    </th>
+                                    <th>
+                                        Last Name
+                                    </th>
+                                    <th>
+                                        Groups
+                                    </th>
+                                    <th>
+                                        <input type="checkbox" (click)="selectAll($event.target.checked)">
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of users">
+                                        <th>{{user.email}}</th>
+                                        <th>{{user.first_name}}</th>
+                                        <th>{{user.last_name}}</th>
+                                        <th>{{user.groups.join(",")}}</th>
+                                        <th>
+                                            <input type="checkbox" [checked]="user.selected" [(ngModel)]="user.selected"
+                                                (click)="selectUser($event.target.checked,user)">
+
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

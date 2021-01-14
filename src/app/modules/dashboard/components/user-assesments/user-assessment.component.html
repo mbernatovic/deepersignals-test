@@ -1,0 +1,56 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ff9c67" type="square-jelly-box" [fullScreen]="true">
+    <p style="color: white; background: transparent;"> Loading... </p>
+</ngx-spinner>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">User Assesments</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Users Resolved
+                                    </th>
+                                    <th>
+                                        Active
+                                    </th>
+                                    <th>
+                                        Image
+                                    </th>
+                                    <th>
+                                        Report
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let assesment of assesments">
+                                        <th>{{assesment.id}}</th>
+                                        <th>{{assesment.name}}</th>
+                                        <th>{{assesment.users_resolved}}</th>
+                                        <th>{{assesment.active}}</th>
+                                        <th><img width="150px" src="{{assesment.image_url}}" /></th>
+                                        <th>
+                                            <button button mat-raised-button type="button"
+                                                class="btn btn-primary btn-sm"
+                                                (click)="openAssesmentReport(assesment.id)">Report</button>
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
