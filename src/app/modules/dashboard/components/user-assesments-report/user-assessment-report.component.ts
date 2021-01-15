@@ -77,7 +77,8 @@ export class UserAssessmentReportComponent implements OnInit {
     ).toPromise();
   
     if(response){
-      this.data.series = [response.data.agreeableness, response.data.drive, response.data.luck, response.data.opness]
+      this.report = response;
+      this.data.series = [[this.report.data.Agreeableness, this.report.data.Drive, this.report.data.Luck, this.report.data.Openess]];
       switch(response.type){
         case "bar":
           this.type = "Bar";

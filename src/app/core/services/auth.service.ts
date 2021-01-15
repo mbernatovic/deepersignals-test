@@ -39,7 +39,13 @@ export class AuthenticationService {
     checkUser(){
         var storageUser = localStorage.getItem('currentUser');
         if(storageUser){
-            return JSON.parse(atob(storageUser));
+            try{
+                return JSON.parse(atob(storageUser));
+            }
+            catch{
+                this.router.navigate(['/login']);
+                localStorage.removeItem('currentUser');
+            }
         }
         return null;
         

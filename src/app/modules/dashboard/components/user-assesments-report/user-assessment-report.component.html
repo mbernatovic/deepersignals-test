@@ -15,7 +15,9 @@
                         <h4 class="card-title ">Assesments Graph</h4>
                     </div>
                     <div class="card-body">
-                        <x-chartist [type]="type" [data]="data" [options]="options" [events]="events"></x-chartist>
+                        <ng-container *ngIf="report">
+                            <x-chartist [type]="type" [data]="data" [options]="options" [events]="events"></x-chartist>
+                        </ng-container>
                     </div>
                 </div>
             </div>

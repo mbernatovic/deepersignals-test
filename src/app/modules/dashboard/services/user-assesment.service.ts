@@ -18,6 +18,6 @@ export class UserAssesmentsService extends BaseService {
 
     getAssestmentReport(assesmentId: number) : Observable<UserAssessmentReport>{
         const params = this.serialize({id:assesmentId});
-        return this.getData(`/api/userassessments/graph?${params}`);
+        return this.getData(`/api/userassessment/graph?${params}`);
     }
 }

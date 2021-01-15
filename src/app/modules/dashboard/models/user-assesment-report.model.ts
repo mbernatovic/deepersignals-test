@@ -4,9 +4,9 @@ export interface UserAssessmentReport{
 }
 
 export interface UserAssessmentReportData{
-    agreeableness: number;
-    drive : number;
-    luck : number;
-    openess: number;
+    Agreeableness: number;
+    Drive : number;
+    Luck : number;
+    Openess: number;
 }
 
